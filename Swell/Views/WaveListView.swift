@@ -2,7 +2,7 @@
 //  WaveListView.swift
 //  Swell
 //
-//  Created by Dhison Padma on 11/30/25.
+//  Secondary screen showing all waves with sunset surfing theme
 //
 
 import SwiftUI
@@ -11,51 +11,35 @@ import SwiftData
 struct WaveListView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \Wave.createdAt, order: .reverse) private var waves: [Wave]
-    @State private var showingComposeView = false
 
     var body: some View {
-        NavigationStack {
-            ZStack(alignment: .bottomTrailing) {
-                if waves.isEmpty {
-                    emptyStateView
-                } else {
-                    waveListContent
-                }
+        ZStack {
+            // Sunset gradient background
+            AppGradients.sunsetBackground
+                .ignoresSafeArea()
 
-                // Floating Action Button
-                Button {
-                    showingComposeView = true
-                } label: {
-                    Image(systemName: "plus")
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                        .foregroundStyle(.white)
-                        .frame(width: 56, height: 56)
-                        .background(Color.blue)
-                        .clipShape(Circle())
-                        .shadow(color: .black.opacity(0.3), radius: 8, x: 0, y: 4)
-                }
-                .padding(.trailing, 20)
-                .padding(.bottom, 20)
-            }
-            .navigationTitle("Waves")
-            .sheet(isPresented: $showingComposeView) {
-                ComposeView()
+            if waves.isEmpty {
+                emptyStateView
+            } else {
+                waveListContent
             }
         }
+        .navigationTitle("Waves")
+        .navigationBarTitleDisplayMode(.large)
     }
 
     private var emptyStateView: some View {
         VStack(spacing: 16) {
             Image(systemName: "water.waves")
                 .font(.system(size: 64))
-                .foregroundStyle(.secondary)
+                .foregroundStyle(AppColors.oceanBlue.opacity(0.6))
 
             Text("No waves yet")
                 .font(.title2)
                 .fontWeight(.medium)
+                .foregroundStyle(AppColors.oceanBlue)
 
-            Text("Tap the + button to capture your first wave")
+            Text("Capture your first wave from the main screen")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
@@ -67,9 +51,13 @@ struct WaveListView: View {
         List {
             ForEach(waves) { wave in
                 WaveRow(wave: wave)
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
             }
             .onDelete(perform: deleteWaves)
         }
+        .scrollContentBackground(.hidden)
+        .listStyle(.plain)
     }
 
     private func deleteWaves(at offsets: IndexSet) {
@@ -87,11 +75,15 @@ struct WaveRow: View {
             Text(wave.content)
                 .lineLimit(3)
                 .font(.body)
+                .foregroundStyle(.primary)
 
             Text(relativeTimestamp(from: wave.createdAt))
                 .font(.caption)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(AppColors.oceanBlue)
         }
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .frostedCard()
         .padding(.vertical, 4)
     }
 
@@ -130,11 +122,15 @@ struct WaveRow: View {
         container.mainContext.insert(wave)
     }
 
-    return WaveListView()
-        .modelContainer(container)
+    return NavigationStack {
+        WaveListView()
+            .modelContainer(container)
+    }
 }
 
 #Preview("Empty State") {
-    WaveListView()
-        .modelContainer(for: Wave.self, inMemory: true)
+    NavigationStack {
+        WaveListView()
+            .modelContainer(for: Wave.self, inMemory: true)
+    }
 }
