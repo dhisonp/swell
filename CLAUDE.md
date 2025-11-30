@@ -27,11 +27,11 @@ forget it" – except you don't forget.
 ├── Swell/
 │   ├── SwellApp.swift           # App entry, ModelContainer setup
 │   ├── Models/
-│   │   └── Thought.swift        # SwiftData model
+│   │   └── Wave.swift           # SwiftData model
 │   ├── Views/
 │   │   ├── ContentView.swift    # Main shell / navigation
-│   │   ├── ComposeView.swift    # Thought input
-│   │   └── EchoView.swift       # Display AI summary
+│   │   ├── ComposeView.swift    # Wave input
+│   │   └── SwellView.swift      # Display AI summary
 │   ├── Services/
 │   │   ├── SwellService.swift   # API calls to edge function
 │   │   └── NotificationManager.swift
@@ -80,16 +80,16 @@ forget it" – except you don't forget.
 
 ## Current Sprint: MVP
 
-**Goal:** User can write a thought → receive daily AI summary notification
+**Goal:** User can write a wave → receive daily AI summary notification
 
 ### MVP Scope
 
 - [x] Project setup
-- [ ] Thought model (id, content, timestamp)
+- [ ] Wave model (id, content, timestamp)
 - [ ] ComposeView – single text field, save button
 - [ ] Schedule daily local notification (user picks time)
 - [ ] SwellService – fetch summary from edge function
-- [ ] EchoView – display today's summary
+- [ ] SwellView – display today's summary
 - [ ] Cloudflare Worker – Gemini integration
 
 ### Out of Scope (v1.1+)
@@ -106,7 +106,7 @@ forget it" – except you don't forget.
 - Keep Gemini API key server-side only (in Cloudflare Worker)
 - Use Gemini Flash 2.5 for daily summaries (fast, cheap)
 - Prompt strategy: summarize + one reflective question
-- Batch recent thoughts (last 24h) in single API call
+- Batch recent waves (last 24h) in single API call
 
 ## Commands
 

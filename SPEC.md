@@ -16,7 +16,7 @@ them to you – distilled, reflected, at the right moment.
 ## Solution
 
 Swell is "write it and forget it" – except you don't forget. The app captures
-thoughts with zero friction and uses AI to:
+waves of thought with zero friction and uses AI to:
 
 1. Summarize what's on your mind
 2. Surface patterns you might miss
@@ -33,29 +33,29 @@ entries.
 
 1. Open app
 2. See single text field (keyboard auto-focused)
-3. Write thought
+3. Write wave
 4. Tap "Done" or swipe down
-5. Thought saved, app closes or resets
+5. Wave saved, app closes or resets
 
 ### Receive
 
 1. Daily notification at user-chosen time (default: 9am)
 2. Notification preview shows first line of summary
-3. Tap → opens EchoView with full summary
+3. Tap → opens SwellView with full summary
 
 ---
 
 ## Data Model
 
-### Thought
+### Wave
 
 | Field     | Type   | Notes                       |
 | --------- | ------ | --------------------------- |
 | id        | UUID   | Primary key, auto-generated |
-| content   | String | The raw thought             |
+| content   | String | The raw wave                |
 | createdAt | Date   | Timestamp                   |
 
-### Echo (v1.1 – not MVP)
+### Swell (v1.1 – not MVP)
 
 | Field      | Type   | Notes                          |
 | ---------- | ------ | ------------------------------ |
@@ -63,9 +63,9 @@ entries.
 | date       | Date   | Which day this covers          |
 | summary    | String | AI-generated summary           |
 | reflection | String | AI-generated question/prompt   |
-| thoughtIDs | [UUID] | Thoughts included in this echo |
+| waveIDs    | [UUID] | Waves included in this swell   |
 
-For MVP, we don't persist Echos – just fetch and display.
+For MVP, we don't persist Swells – just fetch and display.
 
 ---
 
@@ -79,11 +79,11 @@ For MVP, we don't persist Echos – just fetch and display.
 - Optional: character count (subtle)
 - No title field, no tags, no mood
 
-### EchoView (MVP)
+### SwellView (MVP)
 
 - Today's AI summary
 - One reflective question
-- Subtle "View thoughts" link (shows raw entries)
+- Subtle "View waves" link (shows raw entries)
 - Pull-to-refresh (re-fetch summary)
 
 ### SettingsView (MVP)
@@ -94,26 +94,26 @@ For MVP, we don't persist Echos – just fetch and display.
 ### HistoryView (v1.1)
 
 - Calendar or list of past days
-- Tap day → see that day's Echo + raw thoughts
+- Tap day → see that day's Swell + raw waves
 
 ---
 
 ## AI Strategy
 
-### Daily Echo Prompt
+### Daily Swell Prompt
 
 ```
-You are a thoughtful reflection assistant. The user has written these thoughts over the past 24 hours:
+You are a thoughtful reflection assistant. The user has written these waves over the past 24 hours:
 
-<thoughts>
-{thoughts_json}
-</thoughts>
+<waves>
+{waves_json}
+</waves>
 
 Generate:
 1. A 2-3 sentence summary of what's on their mind
 2. One gentle, open-ended reflective question
 
-Keep tone warm but not saccharine. Be specific to their actual thoughts, not generic.
+Keep tone warm but not saccharine. Be specific to their actual waves, not generic.
 Do not give advice unless explicitly relevant. Focus on reflection.
 
 Respond in JSON:
@@ -130,9 +130,9 @@ Respond in JSON:
 
 ### Edge Cases
 
-- No thoughts in 24h → skip notification or send encouragement
-- Single thought → still summarize, acknowledge brevity
-- Very long thought → truncate to last 4000 chars per thought
+- No waves in 24h → skip notification or send encouragement
+- Single wave → still summarize, acknowledge brevity
+- Very long wave → truncate to last 4000 chars per wave
 
 ---
 
@@ -142,7 +142,7 @@ Respond in JSON:
 
 - User sets preferred time in Settings
 - App schedules repeating daily notification
-- On notification tap: app fetches summary, shows EchoView
+- On notification tap: app fetches summary, shows SwellView
 - If app in foreground at scheduled time: show in-app prompt
 
 ### v1.1: Push Notifications
@@ -167,7 +167,7 @@ Respond in JSON:
 
 ## Success Metrics (Post-Launch)
 
-- Daily active captures (target: 1+ thought/day)
+- Daily active captures (target: 1+ wave/day)
 - Notification open rate (target: >40%)
 - Retention D7 (target: >30%)
 - User sentiment in reviews
@@ -176,9 +176,9 @@ Respond in JSON:
 
 ## Open Questions
 
-- [ ] Should thoughts have optional titles? (Leaning no)
+- [ ] Should waves have optional titles? (Leaning no)
 - [ ] Voice input? (v1.2 maybe)
-- [ ] Widget showing latest Echo? (v1.1)
+- [ ] Widget showing latest Swell? (v1.1)
 - [ ] Apple Watch quick capture? (v1.2)
 
 ---
@@ -187,7 +187,7 @@ Respond in JSON:
 
 ### MVP (v1.0)
 
-- Capture thought
+- Capture wave
 - Daily local notification
 - AI summary via edge function
 - Settings: notification time
@@ -197,7 +197,7 @@ Respond in JSON:
 - CloudKit sync
 - History view
 - Weekly digest
-- Persist Echos locally
+- Persist Swells locally
 
 ### v1.2
 
