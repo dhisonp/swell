@@ -71,12 +71,12 @@ For MVP, we don't persist Swells – just fetch and display.
 
 ## Screens
 
-### ComposeView (MVP)
+### WaveComposeView (MVP)
 
 - Auto-focused multiline text field
 - Minimal chrome: just the input
-- "Done" button (or keyboard dismiss)
-- Optional: character count (subtle)
+- "Save" button (disabled when empty)
+- "View Waves" navigation link at bottom
 - No title field, no tags, no mood
 
 ### SwellView (MVP)

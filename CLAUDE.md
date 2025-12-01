@@ -18,12 +18,12 @@ via summaries/reflections.
 /Swell
 ├── Swell/
 │   ├── SwellApp.swift
-│   ├── ContentView.swift        # Primary compose screen
-│   ├── Models/Wave.swift        # @Model (id, content, createdAt)
-│   ├── Views/WaveListView.swift # Secondary screen (push nav)
-│   ├── Theme/Theme.swift        # Design system (colors, gradients, modifiers)
-│   └── Services/               # (future: SwellService, NotificationManager)
-└── worker/                     # (future: Cloudflare Worker)
+│   ├── WaveComposeView.swift    # Primary compose screen
+│   ├── WaveListView.swift       # Secondary screen (push nav)
+│   ├── Wave.swift               # @Model (id, content, createdAt)
+│   ├── Theme.swift              # Design system (colors, gradients, modifiers)
+│   └── Services/                # (future: SwellService, NotificationManager)
+└── worker/                      # (future: Cloudflare Worker)
 ```
 
 ## Design System
@@ -48,7 +48,7 @@ via summaries/reflections.
 ### Implemented ✅
 
 - **Wave Model:** SwiftData with UUID id
-- **ContentView:** Primary compose screen (gradient bg, frosted TextEditor,
+- **WaveComposeView:** Primary compose screen (gradient bg, frosted TextEditor,
   auto-focus)
 - **WaveListView:** Secondary screen (push nav, frosted wave cards,
   swipe-to-delete)
