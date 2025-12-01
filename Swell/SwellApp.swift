@@ -19,6 +19,7 @@ struct SwellApp: App {
   var body: some Scene {
     WindowGroup {
       WaveComposeView()
+        .font(AppFonts.body)
     }
     .modelContainer(sharedModelContainer)
   }

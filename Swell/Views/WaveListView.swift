@@ -27,12 +27,11 @@ struct WaveListView: View {
         .foregroundStyle(AppColors.oceanBlue.opacity(0.6))
 
       Text("No waves yet")
-        .font(.title2)
-        .fontWeight(.medium)
+        .font(AppFonts.title)
         .foregroundStyle(AppColors.oceanBlue)
 
       Text("Capture your first wave from the main screen")
-        .font(.subheadline)
+        .font(AppFonts.callout)
         .foregroundStyle(.secondary)
         .multilineTextAlignment(.center)
     }
@@ -66,17 +65,16 @@ struct WaveRow: View {
     VStack(alignment: .leading, spacing: 8) {
       Text(wave.content)
         .lineLimit(3)
-        .font(.body)
+        .font(AppFonts.body)
         .foregroundStyle(.primary)
 
       Text(relativeTimestamp(from: wave.createdAt))
-        .font(.caption)
+        .font(AppFonts.caption)
         .foregroundStyle(AppColors.oceanBlue)
     }
-    .padding()
+    .padding(14)
     .frame(maxWidth: .infinity, alignment: .leading)
     .frostedCard()
-    .padding(.vertical, 4)
   }
 
   private func relativeTimestamp(from date: Date) -> String {

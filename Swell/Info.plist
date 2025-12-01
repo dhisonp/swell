@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>IosevkaFira-Regular.ttf</string>
+		<string>IosevkaFira-Light.ttf</string>
+		<string>IosevkaFira-LightItalic.ttf</string>
+		<string>IosevkaFira-Medium.ttf</string>
+		<string>IosevkaFira-MediumItalic.ttf</string>
+		<string>IosevkaFira-Bold.ttf</string>
+		<string>IosevkaFira-BoldItalic.ttf</string>
+		<string>IosevkaFira-Italic.ttf</string>
+	</array>
+</dict>
+</plist>

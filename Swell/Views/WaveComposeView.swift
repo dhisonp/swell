@@ -15,13 +15,13 @@ struct WaveComposeView: View {
         VStack(spacing: 24) {
           Spacer()
 
-          Text("Capture a Wave")
-            .font(.largeTitle)
-            .fontWeight(.semibold)
+          Text("Capture a Wave...")
+            .font(AppFonts.largeTitle)
             .foregroundStyle(AppColors.oceanBlue)
 
           TextEditor(text: $content)
             .focused($isTextFieldFocused)
+            .font(AppFonts.body)
             .frame(height: 200)
             .padding()
             .scrollContentBackground(.hidden)
@@ -43,7 +43,7 @@ struct WaveComposeView: View {
             WaveListView()
           } label: {
             Text("View Waves")
-              .font(.subheadline)
+              .font(AppFonts.callout)
               .foregroundStyle(.secondary)
           }
           .padding(.bottom, 32)

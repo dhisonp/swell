@@ -15,11 +15,20 @@ struct AppGradients {
   )
 }
 
+struct AppFonts {
+  static let largeTitle = Font.custom("Iosevka-Fira-Medium", size: 24)
+  static let title = Font.custom("Iosevka-Fira-Medium", size: 22)
+  static let body = Font.custom("Iosevka-Fira", size: 17)
+  static let callout = Font.custom("Iosevka-Fira", size: 15)
+  static let caption = Font.custom("Iosevka-Fira-Light", size: 12)
+  static let button = Font.custom("Iosevka-Fira-Medium", size: 17)
+}
+
 struct FrostedCardStyle: ViewModifier {
   func body(content: Content) -> some View {
     content
       .background(.ultraThinMaterial)
-      .cornerRadius(16)
+      .cornerRadius(12)
       .shadow(color: .black.opacity(0.1), radius: 8, x: 0, y: 4)
   }
 }
@@ -29,7 +38,7 @@ struct AccentButtonStyle: ViewModifier {
 
   func body(content: Content) -> some View {
     content
-      .font(.headline)
+      .font(AppFonts.button)
       .foregroundStyle(.white)
       .frame(maxWidth: .infinity)
       .padding(.vertical, 16)
