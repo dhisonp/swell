@@ -52,6 +52,14 @@ struct WaveComposeView: View {
       .onAppear {
         isTextFieldFocused = true
       }
+      .toolbar {
+        ToolbarItem(placement: .principal) {
+          Text("Swell")
+            .font(AppFonts.heading)
+            .foregroundStyle(AppColors.oceanBlue)
+        }
+      }
+      .navigationBarTitleDisplayMode(.inline)
     }
   }
 

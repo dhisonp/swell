@@ -16,6 +16,7 @@ struct AppGradients {
 }
 
 struct AppFonts {
+  static let heading = Font.custom("Iosevka-Fira-Bold", size: 36)
   static let largeTitle = Font.custom("Iosevka-Fira-Medium", size: 24)
   static let title = Font.custom("Iosevka-Fira-Medium", size: 22)
   static let body = Font.custom("Iosevka-Fira", size: 17)
