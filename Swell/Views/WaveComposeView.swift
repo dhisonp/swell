@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  WaveComposeView.swift
 //  Swell
 //
 //  Primary compose screen with sunset surfing theme
@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct ContentView: View {
+struct WaveComposeView: View {
     @Environment(\.modelContext) private var modelContext
     @FocusState private var isTextFieldFocused: Bool
     @State private var content: String = ""
@@ -89,6 +89,6 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    WaveComposeView()
         .modelContainer(for: Wave.self, inMemory: true)
 }

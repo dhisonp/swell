@@ -25,7 +25,7 @@ struct SwellApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WaveComposeView()
         }
         .modelContainer(sharedModelContainer)
     }
