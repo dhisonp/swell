@@ -40,6 +40,8 @@ via summaries/reflections.
 - Views: `*View.swift`, Models: singular noun
 - One type per file, flat structure until >10 files per folder
 - User-facing errors → show alert, log with `os.Logger`
+- Never comment a code block on 'what' it does, only 'why' it does what it does
+  if it looks like it may raise suspicion or questions
 
 ## Current State
 
@@ -74,5 +76,4 @@ via summaries/reflections.
 ## Notes
 
 - Only modify .swift files (Xcode project exists)
-- New files must be added to Xcode target manually
 - Prefer small, focused changes
