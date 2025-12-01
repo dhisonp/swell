@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		302118662EDD49AE00B06F8C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 302118632EDD49AE00B06F8C /* README.md */; };
 		302118672EDD49AE00B06F8C /* CLAUDE.md in Resources */ = {isa = PBXBuildFile; fileRef = 302118622EDD49AE00B06F8C /* CLAUDE.md */; };
-		302118682EDD49AE00B06F8C /* TODO.md in Resources */ = {isa = PBXBuildFile; fileRef = 302118652EDD49AE00B06F8C /* TODO.md */; };
-		302118692EDD49AE00B06F8C /* SPEC.md in Resources */ = {isa = PBXBuildFile; fileRef = 302118642EDD49AE00B06F8C /* SPEC.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,8 +31,6 @@
 /* Begin PBXFileReference section */
 		302118622EDD49AE00B06F8C /* CLAUDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLAUDE.md; sourceTree = "<group>"; };
 		302118632EDD49AE00B06F8C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		302118642EDD49AE00B06F8C /* SPEC.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SPEC.md; sourceTree = "<group>"; };
-		302118652EDD49AE00B06F8C /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 		3039A5582EDCC2E9000D9E40 /* Swell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3039A5672EDCC2EC000D9E40 /* SwellTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwellTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3039A5712EDCC2EC000D9E40 /* SwellUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwellUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,8 +84,6 @@
 			children = (
 				302118622EDD49AE00B06F8C /* CLAUDE.md */,
 				302118632EDD49AE00B06F8C /* README.md */,
-				302118642EDD49AE00B06F8C /* SPEC.md */,
-				302118652EDD49AE00B06F8C /* TODO.md */,
 				3039A55A2EDCC2E9000D9E40 /* Swell */,
 				3039A56A2EDCC2EC000D9E40 /* SwellTests */,
 				3039A5742EDCC2EC000D9E40 /* SwellUITests */,
@@ -229,8 +223,6 @@
 			files = (
 				302118662EDD49AE00B06F8C /* README.md in Resources */,
 				302118672EDD49AE00B06F8C /* CLAUDE.md in Resources */,
-				302118682EDD49AE00B06F8C /* TODO.md in Resources */,
-				302118692EDD49AE00B06F8C /* SPEC.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

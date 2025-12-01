@@ -1,10 +1,3 @@
-//
-//  WaveListView.swift
-//  Swell
-//
-//  Secondary screen showing all waves with sunset surfing theme
-//
-
 import SwiftData
 import SwiftUI
 
@@ -14,7 +7,6 @@ struct WaveListView: View {
 
   var body: some View {
     ZStack {
-      // Sunset gradient background
       AppGradients.sunsetBackground
         .ignoresSafeArea()
 

@@ -1,10 +1,3 @@
-//
-//  WaveComposeView.swift
-//  Swell
-//
-//  Primary compose screen with sunset surfing theme
-//
-
 import SwiftData
 import SwiftUI
 
@@ -16,20 +9,17 @@ struct WaveComposeView: View {
   var body: some View {
     NavigationStack {
       ZStack {
-        // Sunset gradient background
         AppGradients.sunsetBackground
           .ignoresSafeArea()
 
         VStack(spacing: 24) {
           Spacer()
 
-          // Title
           Text("Capture a Wave")
             .font(.largeTitle)
             .fontWeight(.semibold)
             .foregroundStyle(AppColors.oceanBlue)
 
-          // Text editor with frosted card style
           TextEditor(text: $content)
             .focused($isTextFieldFocused)
             .frame(height: 200)
@@ -38,7 +28,6 @@ struct WaveComposeView: View {
             .frostedCard()
             .padding(.horizontal, 32)
 
-          // Save button
           Button {
             saveWave()
           } label: {
@@ -50,7 +39,6 @@ struct WaveComposeView: View {
 
           Spacer()
 
-          // View Waves navigation link
           NavigationLink {
             WaveListView()
           } label: {
@@ -80,8 +68,8 @@ struct WaveComposeView: View {
 
     do {
       try modelContext.save()
-      content = ""  // Clear the text field after saving
-      isTextFieldFocused = true  // Re-focus for quick next entry
+      content = ""
+      isTextFieldFocused = true
     } catch {
       print("Error saving wave: \(error)")
     }

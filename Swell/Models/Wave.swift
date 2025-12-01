@@ -1,10 +1,3 @@
-//
-//  Wave.swift
-//  Swell
-//
-//  Created by Dhison Padma on 11/30/25.
-//
-
 import Foundation
 import SwiftData
 
@@ -20,3 +13,4 @@ final class Wave {
     self.createdAt = createdAt
   }
 }
+

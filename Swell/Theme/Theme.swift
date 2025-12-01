@@ -1,13 +1,4 @@
-//
-//  Theme.swift
-//  Swell
-//
-//  Sunset surfing theme design system
-//
-
 import SwiftUI
-
-// MARK: - App Colors
 
 struct AppColors {
   static let oceanBlue = Color(hex: "0077B6")
@@ -16,8 +7,6 @@ struct AppColors {
   static let lightBlue = Color(hex: "CAF0F8")
 }
 
-// MARK: - App Gradients
-
 struct AppGradients {
   static let sunsetBackground = LinearGradient(
     colors: [AppColors.peach, AppColors.lightBlue],
@@ -25,8 +14,6 @@ struct AppGradients {
     endPoint: .bottomTrailing
   )
 }
-
-// MARK: - Custom View Modifiers
 
 struct FrostedCardStyle: ViewModifier {
   func body(content: Content) -> some View {
@@ -51,8 +38,6 @@ struct AccentButtonStyle: ViewModifier {
   }
 }
 
-// MARK: - View Extensions
-
 extension View {
   func frostedCard() -> some View {
     modifier(FrostedCardStyle())
@@ -62,8 +47,6 @@ extension View {
     modifier(AccentButtonStyle(isDisabled: disabled))
   }
 }
-
-// MARK: - Color Extension for Hex
 
 extension Color {
   init(hex: String) {
