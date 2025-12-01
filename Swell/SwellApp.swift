@@ -23,4 +23,3 @@ struct SwellApp: App {
     .modelContainer(sharedModelContainer)
   }
 }
-

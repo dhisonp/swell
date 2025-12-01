@@ -107,12 +107,14 @@ struct WaveRow: View {
   let sampleWaves = [
     Wave(
       content: "Just had the most amazing idea for a new feature",
-      createdAt: Date().addingTimeInterval(-300)),
+      createdAt: Date().addingTimeInterval(-300)
+    ),
     Wave(content: "Reminder to call mom later", createdAt: Date().addingTimeInterval(-3600)),
     Wave(
       content:
         "Why do we always overthink the simplest problems? Sometimes the obvious solution is the right one.",
-      createdAt: Date().addingTimeInterval(-7200)),
+      createdAt: Date().addingTimeInterval(-7200)
+    ),
   ]
 
   for wave in sampleWaves {

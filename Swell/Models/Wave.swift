@@ -13,4 +13,3 @@ final class Wave {
     self.createdAt = createdAt
   }
 }
-
