@@ -162,10 +162,10 @@ struct SwellView: View {
         isLoading = false
         // Mock data for preview/fallback
         summary = """
-        The tides are calm today. You've been focused on finding balance and appreciating the small moments.
-        
-        Reflective Question: What is one small thing you can do today to bring more joy into your routine?
-        """
+          The tides are calm today. You've been focused on finding balance and appreciating the small moments.
+
+          Reflective Question: What is one small thing you can do today to bring more joy into your routine?
+          """
       }
     }
   }
