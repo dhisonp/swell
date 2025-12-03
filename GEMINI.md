@@ -5,14 +5,6 @@
 Low-friction iOS journaling app. Capture thoughts quickly → AI resurfaces them
 via summaries/reflections.
 
-## IMPORTANT: Convention and Rules
-
-These are **strict** rules that should never be overridden.
-
-- Do not write organizational, verbose and redundant comments
-- Comments should only describe why a code block is written, not what it does
-- Focus on code correctness and idiomacy before efficiency and perfection
-
 ## Tech Stack
 
 - Swift 6, SwiftUI, SwiftData (local-first)
@@ -41,15 +33,18 @@ These are **strict** rules that should never be overridden.
 - **Background:** Gradient (pale peach → light blue)
 - **Style:** Frosted cards, rounded buttons, smooth gradients
 
-## Conventions
+## IMPORTANT: Conventions
+
+These should NEVER be overriden.
 
 - Swift 6 strict concurrency, `@Observable` over `@ObservableObject`
 - No force unwrapping, use guard/if-let
+- Propagate errors if possibler
 - Views: `*View.swift`, Models: singular noun
 - One type per file, flat structure until >10 files per folder
-- User-facing errors → show alert, log with `os.Logger`
-- Never comment a code block on 'what' it does, only 'why' it does what it does
-  if it looks like it may raise suspicion or questions
+- Do not write organizational, verbose and redundant comments
+- Comments should only describe why a code block is written, not what it does
+- Focus on code correctness and idiomacy before efficiency and perfection
 
 ## Current State
 
@@ -68,8 +63,8 @@ These are **strict** rules that should never be overridden.
 
 - [ ] Daily local notification (user picks time)
 - [ ] SwellService – fetch summary from edge function
-- [x] SwellView – display AI summary
-- [x] Cloudflare Worker – Gemini integration
+- [ ] SwellView – display AI summary
+- [ ] Cloudflare Worker – Gemini integration
 
 ### Out of Scope (v1.1+)
 
@@ -80,6 +75,11 @@ These are **strict** rules that should never be overridden.
 - Gemini API key server-side only (Cloudflare Worker)
 - Gemini Flash 2.5 for summaries (batch last 24h waves)
 - Prompt: summarize + one reflective question
+
+## Notes
+
+- Only modify .swift files (Xcode project exists)
+- Prefer small, focused changes
 
 ## Context Persistence
 

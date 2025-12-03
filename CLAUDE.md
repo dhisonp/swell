@@ -33,15 +33,18 @@ via summaries/reflections.
 - **Background:** Gradient (pale peach → light blue)
 - **Style:** Frosted cards, rounded buttons, smooth gradients
 
-## Conventions
+## IMPORTANT: Conventions
+
+These should NEVER be overriden.
 
 - Swift 6 strict concurrency, `@Observable` over `@ObservableObject`
 - No force unwrapping, use guard/if-let
+- Propagate errors if possibler
 - Views: `*View.swift`, Models: singular noun
 - One type per file, flat structure until >10 files per folder
-- User-facing errors → show alert, log with `os.Logger`
-- Never comment a code block on 'what' it does, only 'why' it does what it does
-  if it looks like it may raise suspicion or questions
+- Do not write organizational, verbose and redundant comments
+- Comments should only describe why a code block is written, not what it does
+- Focus on code correctness and idiomacy before efficiency and perfection
 
 ## Current State
 
