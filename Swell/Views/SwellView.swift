@@ -45,7 +45,7 @@ struct SwellView: View {
         }) {
           Text("Make more Waves...")
             .font(AppFonts.callout)
-            .foregroundStyle(AppColors.oceanBlue)
+            .foregroundStyle(.secondary)
             .underline()
             .padding(.vertical, 10)
         }
@@ -64,7 +64,7 @@ struct SwellView: View {
       ProgressView()
         .scaleEffect(1.5)
         .tint(AppColors.oceanBlue)
-      Text("Surfing your waves...")
+      Text("Eyes on the horizon...")
         .font(AppFonts.title)
         .foregroundStyle(AppColors.oceanBlue)
     }
@@ -79,7 +79,7 @@ struct SwellView: View {
       Image(systemName: "exclamationmark.triangle")
         .font(.largeTitle)
         .foregroundStyle(AppColors.sunsetOrange)
-      Text("Flat waters...")
+      Text("Rough winds today...")
         .font(AppFonts.title)
         .foregroundStyle(AppColors.sunsetOrange)
       Text(message)
@@ -110,7 +110,7 @@ struct SwellView: View {
           .lineSpacing(6)
           .frame(maxWidth: .infinity, alignment: .leading)
       } else {
-        Text("No Swell just yet. Create more Waves to find your Swell.")
+        Text("Flat waters. Find more Waves to make a Swell!")
           .font(AppFonts.body)
           .foregroundStyle(.secondary)
           .frame(maxWidth: .infinity, alignment: .center)
@@ -150,6 +150,13 @@ struct SwellView: View {
     let yesterday = Date().addingTimeInterval(-24 * 3600)
     let recentWaves = allWaves.filter { $0.createdAt >= yesterday }
 
+    guard !recentWaves.isEmpty else {
+      withAnimation {
+        isLoading = false
+      }
+      return
+    }
+
     do {
       let response = try await service.fetchSwell(waves: recentWaves)
       withAnimation {
@@ -158,14 +165,10 @@ struct SwellView: View {
         isLoading = false
       }
     } catch {
+      print("Error loading swell: \(error)")
       withAnimation {
         isLoading = false
-        // Mock data for preview/fallback
-        summary = """
-          The tides are calm today. You've been focused on finding balance and appreciating the small moments.
-
-          Reflective Question: What is one small thing you can do today to bring more joy into your routine?
-          """
+        errorMessage = error.localizedDescription
       }
     }
   }

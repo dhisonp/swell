@@ -46,6 +46,15 @@ struct WaveComposeView: View {
               .font(AppFonts.callout)
               .foregroundStyle(.secondary)
           }
+          .padding(.bottom, 4)
+
+          NavigationLink {
+            SwellView()
+          } label: {
+            Text("View today's Swell")
+              .font(AppFonts.callout)
+              .foregroundStyle(.secondary)
+          }
           .padding(.bottom, 32)
         }
       }
