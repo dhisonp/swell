@@ -58,16 +58,6 @@ struct WaveComposeView: View {
           .padding(.bottom, 32)
         }
       }
-      .onAppear {
-        isTextFieldFocused = true
-      }
-      .toolbar {
-        ToolbarItem(placement: .principal) {
-          Text("Swell")
-            .font(AppFonts.heading)
-            .foregroundStyle(AppColors.oceanBlue)
-        }
-      }
       .navigationBarTitleDisplayMode(.inline)
     }
   }
@@ -86,7 +76,7 @@ struct WaveComposeView: View {
     do {
       try modelContext.save()
       content = ""
-      isTextFieldFocused = true
+      isTextFieldFocused = false
     } catch {
       print("Error saving wave: \(error)")
     }
