@@ -123,7 +123,7 @@ struct SwellView: View {
           .padding(.vertical, 8)
 
         Text("Reflection:")
-          .font(AppFonts.title3)
+          .font(AppFonts.title)
           .foregroundStyle(AppColors.oceanBlue)
 
         Text(reflection)

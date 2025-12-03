@@ -5,6 +5,14 @@
 Low-friction iOS journaling app. Capture thoughts quickly → AI resurfaces them
 via summaries/reflections.
 
+## Convention and Rules
+
+- Only modify .swift files (Xcode project exists)
+- Prefer small, focused changes
+- Avoid organizational comments
+- Avoid obvious, verbose comments
+- Focus on code correctness and idiomacy before efficiency and perfection
+
 ## Tech Stack
 
 - Swift 6, SwiftUI, SwiftData (local-first)
@@ -60,8 +68,8 @@ via summaries/reflections.
 
 - [ ] Daily local notification (user picks time)
 - [ ] SwellService – fetch summary from edge function
-- [ ] SwellView – display AI summary
-- [ ] Cloudflare Worker – Gemini integration
+- [x] SwellView – display AI summary
+- [x] Cloudflare Worker – Gemini integration
 
 ### Out of Scope (v1.1+)
 
@@ -72,11 +80,6 @@ via summaries/reflections.
 - Gemini API key server-side only (Cloudflare Worker)
 - Gemini Flash 2.5 for summaries (batch last 24h waves)
 - Prompt: summarize + one reflective question
-
-## Notes
-
-- Only modify .swift files (Xcode project exists)
-- Prefer small, focused changes
 
 ## Context Persistence
 
