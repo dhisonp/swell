@@ -15,7 +15,7 @@ struct SwellView: View {
 
   @State private var summary: String?
   @State private var reflection: String?
-  @State private var isLoading: Bool = false
+  @State private var isLoading: Bool = true
   @State private var errorMessage: String?
 
   private let service = SwellService()
@@ -102,45 +102,7 @@ struct SwellView: View {
   }
 
   private var contentView: some View {
-    VStack(alignment: .leading, spacing: 16) {
-      if let summary = summary {
-        Text(summary)
-          .font(AppFonts.body)
-          .foregroundStyle(.primary)
-          .lineSpacing(6)
-          .frame(maxWidth: .infinity, alignment: .leading)
-      } else {
-        Text("Flat waters. Find more Waves to make a Swell!")
-          .font(AppFonts.body)
-          .foregroundStyle(.secondary)
-          .frame(maxWidth: .infinity, alignment: .center)
-      }
-
-      // Display the reflection if available
-      if let reflection = reflection, !reflection.isEmpty {
-        Divider()
-          .background(AppColors.oceanBlue.opacity(0.5))
-          .padding(.vertical, 8)
-
-        Text("Reflection:")
-          .font(AppFonts.title)
-          .foregroundStyle(AppColors.oceanBlue)
-
-        Text(reflection)
-          .font(AppFonts.callout)
-          .foregroundStyle(.secondary)
-          .lineSpacing(4)
-          .frame(maxWidth: .infinity, alignment: .leading)
-      }
-    }
-    .padding(30)
-    .background(.ultraThinMaterial)
-    .cornerRadius(24)
-    .overlay(
-      RoundedRectangle(cornerRadius: 24)
-        .stroke(.white.opacity(0.5), lineWidth: 1)
-    )
-    .shadow(color: AppColors.oceanBlue.opacity(0.4), radius: 30, x: 0, y: 10)
+    SwellContentView(summary: summary, reflection: reflection)
   }
 
   private func loadSwell() async {
