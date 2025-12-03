@@ -28,12 +28,14 @@ struct SwellView: View {
       VStack(spacing: 24) {
         Spacer()
 
-        Text("Swell for the day:")
-          .font(AppFonts.largeTitle)
-          .foregroundStyle(AppColors.oceanBlue)
+        if !isLoading {
+          Text("Swell for the day:")
+            .font(AppFonts.largeTitle)
+            .foregroundStyle(AppColors.oceanBlue)
+        }
 
         if isLoading {
-          loadingView
+          SwellLoadingView()
         } else if let error = errorMessage {
           errorView(message: error)
         } else {
@@ -58,20 +60,6 @@ struct SwellView: View {
     .task {
       await loadSwell()
     }
-  }
-  private var loadingView: some View {
-    VStack(spacing: 20) {
-      ProgressView()
-        .scaleEffect(1.5)
-        .tint(AppColors.oceanBlue)
-      Text("Eyes on the horizon...")
-        .font(AppFonts.title)
-        .foregroundStyle(AppColors.oceanBlue)
-    }
-    .frame(maxWidth: .infinity)
-    .padding(40)
-    .background(.ultraThinMaterial)
-    .cornerRadius(20)
   }
 
   private func errorView(message: String) -> some View {
