@@ -42,7 +42,7 @@ struct WaveComposeView: View {
           NavigationLink {
             WaveListView()
           } label: {
-            Text("View Waves")
+            Text("View Waves >")
               .font(AppFonts.callout)
               .foregroundStyle(.secondary)
           }
@@ -51,7 +51,7 @@ struct WaveComposeView: View {
           NavigationLink {
             SwellView()
           } label: {
-            Text("View today's Swell")
+            Text("View today's Swell >")
               .font(AppFonts.callout)
               .foregroundStyle(.secondary)
           }

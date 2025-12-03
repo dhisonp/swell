@@ -16,13 +16,14 @@ struct AppGradients {
 }
 
 struct AppFonts {
-  static let heading = Font.custom("Iosevka-Fira-Bold", size: 36)
+  static let heading = Font.custom("Iosevka-Fira-Bold", size: 322)
   static let largeTitle = Font.custom("Iosevka-Fira-Medium", size: 24)
   static let title = Font.custom("Iosevka-Fira-Medium", size: 22)
-  static let body = Font.custom("Iosevka-Fira", size: 17)
-  static let callout = Font.custom("Iosevka-Fira", size: 15)
+  static let title2 = Font.custom("Iosevka-Fira-Medium", size: 18)
+  static let body = Font.custom("Iosevka-Fira", size: 16)
+  static let callout = Font.custom("Iosevka-Fira", size: 14)
   static let caption = Font.custom("Iosevka-Fira-Light", size: 12)
-  static let button = Font.custom("Iosevka-Fira-Medium", size: 17)
+  static let button = Font.custom("Iosevka-Fira-Medium", size: 16)
 }
 
 struct FrostedCardStyle: ViewModifier {

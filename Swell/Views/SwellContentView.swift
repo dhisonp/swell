@@ -10,12 +10,12 @@ struct SwellContentView: View {
         Text(summary)
           .font(AppFonts.body)
           .foregroundStyle(.primary)
-          .lineSpacing(6)
+          .lineSpacing(4)
           .frame(maxWidth: .infinity, alignment: .leading)
       } else {
         Text("Flat waters. Find more Waves to make a Swell!")
           .font(AppFonts.body)
-          .foregroundStyle(.secondary)
+          .foregroundStyle(.primary)
           .frame(maxWidth: .infinity, alignment: .center)
       }
 
@@ -25,13 +25,13 @@ struct SwellContentView: View {
           .padding(.vertical, 8)
 
         Text("Reflection:")
-          .font(AppFonts.title)
+          .font(AppFonts.title2)
           .foregroundStyle(AppColors.oceanBlue)
 
         Text(reflection)
           .font(AppFonts.callout)
           .foregroundStyle(.secondary)
-          .lineSpacing(4)
+          .lineSpacing(3)
           .frame(maxWidth: .infinity, alignment: .leading)
       }
     }
