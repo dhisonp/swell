@@ -60,6 +60,7 @@ Generate:
 
 Keep tone warm but not saccharine. Be specific to their actual waves, not generic.
 Do not give advice unless explicitly relevant. Focus on reflection.
+Ensure the combined length of the summary and reflection is a maximum of 80 words.
 
 Respond in JSON:
 {
