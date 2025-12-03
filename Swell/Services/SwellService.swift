@@ -43,7 +43,7 @@ struct SwellService {
   private let session: URLSession
   private let dateFormatter: ISO8601DateFormatter = {
     let formatter = ISO8601DateFormatter()
-    formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds] // Match JS default to be safe
+    formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]  // Match JS default to be safe
     return formatter
   }()
 
@@ -105,5 +105,3 @@ private struct WaveDTO: Encodable {
   let content: String
   let createdAt: String
 }
-
-
