@@ -5,12 +5,12 @@
 Low-friction iOS journaling app. Capture thoughts quickly → AI resurfaces them
 via summaries/reflections.
 
-## Convention and Rules
+## IMPORTANT: Convention and Rules
 
-- Only modify .swift files (Xcode project exists)
-- Prefer small, focused changes
-- Avoid organizational comments
-- Avoid obvious, verbose comments
+These are **strict** rules that should never be overridden.
+
+- Do not write organizational, verbose and redundant comments
+- Comments should only describe why a code block is written, not what it does
 - Focus on code correctness and idiomacy before efficiency and perfection
 
 ## Tech Stack
