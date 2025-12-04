@@ -19,14 +19,7 @@ struct WaveComposeView: View {
             .font(AppFonts.largeTitle)
             .foregroundStyle(AppColors.oceanBlue)
 
-          TextEditor(text: $content)
-            .focused($isTextFieldFocused)
-            .font(AppFonts.body)
-            .frame(height: 200)
-            .padding()
-            .scrollContentBackground(.hidden)
-            .frostedCard()
-            .padding(.horizontal, 32)
+          WaveInputView(text: $content, isFocused: $isTextFieldFocused)
 
           Button {
             saveWave()

@@ -53,7 +53,8 @@ struct SwellContentView: View {
     SwellContentView(
       summary:
         "You are a very handsome man. However, you are also a very handsome woman. So what are you? You are a very handsome person. You are a very handsome man. However, you are also a very handsome woman. So what are you? You are a very handsome person.",
-      reflection: "Can you be more handsome, or is handsome just a concept? What is then, the alternative, other than the deared pretty?"
+      reflection:
+        "Can you be more handsome, or is handsome just a concept? What is then, the alternative, other than the deared pretty?"
     )
   }
 }
